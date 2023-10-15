@@ -1,10 +1,23 @@
 version: '3'
 
+networks:
+  traefik_default:
+    external: true
+
 services:
   web:
-    build: .
-    command: python manage.py runserver 0.0.0.0:8000
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: prod
+    # command: python manage.py runserver 0.0.0.0:8000
     volumes:
       - .:/code
     ports:
       - "8000:8000"
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.althaia.rule=Host(`althaia.nl`)"  # Replace with your domain
+      - "traefik.http.routers.althaia.entrypoints=web"
+      - "traefik.http.routers.althaia.service=althaia"
+      - "traefik.http.services.althaia.loadbalancer.server.port=8000"

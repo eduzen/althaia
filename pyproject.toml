@@ -5,6 +5,9 @@ requires = [
 ]
 build-backend = "setuptools.build_meta"
 
+[tool.setuptools]
+py-modules = []
+
 [project]
 name = "althaia"
 version = "1"
@@ -13,5 +16,6 @@ dependencies = [
   "django",
   "gunicorn",
   "sentry-sdk",
-  "django-extensions"
+  "django-extensions",
+  "whitenoise",
 ]
