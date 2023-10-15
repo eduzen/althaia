@@ -1,0 +1,43 @@
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.4.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-ast
+      - id: check-byte-order-marker
+      - id: check-case-conflict
+      - id: check-executables-have-shebangs
+      - id: check-yaml
+      - id: check-json
+      - id: pretty-format-json
+        args: [--autofix]
+      - id: mixed-line-ending
+      - id: check-added-large-files
+        args: ['--maxkb=4000']
+      - id: check-merge-conflict
+      - id: debug-statements
+
+  - repo: https://github.com/adamchainz/django-upgrade
+    rev: "1.14.1"
+    hooks:
+    -   id: django-upgrade
+        args: [--target-version, "4.2"]
+
+  - repo: https://github.com/asottile/pyupgrade
+    rev: v3.12.0
+    hooks:
+      - id: pyupgrade
+        args: [--py311]
+
+  - repo: https://github.com/psf/black
+    rev: 23.9.1
+    hooks:
+      - id: black
+
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: 'v0.0.290'
+    hooks:
+      - id: ruff
+        # Respect `exclude` and `extend-exclude` settings.
+        args: ["--fix"]
