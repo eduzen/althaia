@@ -9,4 +9,9 @@ build-backend = "setuptools.build_meta"
 name = "althaia"
 version = "1"
 requires-python = ">=3.12"
-dependencies = ["django"]
+dependencies = [
+  "django",
+  "gunicorn",
+  "sentry-sdk",
+  "django-extensions"
+]
