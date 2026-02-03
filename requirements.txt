@@ -14,7 +14,7 @@ django==4.2.16
     #   django-extensions
 django-extensions==3.2.3
     # via althaia (pyproject.toml)
-gunicorn==21.2.0
+gunicorn==22.0.0
     # via althaia (pyproject.toml)
 packaging==23.2
     # via gunicorn
