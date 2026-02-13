@@ -20,7 +20,7 @@ packaging==23.2
     # via gunicorn
 sentry-sdk==1.32.0
     # via althaia (pyproject.toml)
-sqlparse==0.4.4
+sqlparse==0.5.4
     # via django
 urllib3==2.0.7
     # via sentry-sdk
